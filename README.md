@@ -135,7 +135,7 @@ The underlying graph, database, and risk model remain authoritative.
 
     Human Decision Required
 
-<img width="1262" height="738" alt="image" src="https://github.com/user-attachments/assets/4998537c-e3d7-4e7c-9bb0-a7f9535cee81" />
+<img width="780" height="556" alt="image" src="https://github.com/user-attachments/assets/d304c269-4d3f-4538-ac5e-380c9a53f1a2" />
 
 
 # 👤 Human-in-the-Loop
