@@ -1,62 +1,63 @@
 # SENTINEL AI
 
-> Explainable graph-based risk intelligence for detecting coordinated payment abuse.
+<!-- ?? PLACEHOLDER 1: Drag and drop your BEST, wide screenshot of the Home/Command Center dashboard here -->
 
-SENTINEL AI is an enterprise-grade fintech risk operations platform designed for the **Razorpay AI Buildathon 2026**. It leverages deterministic machine learning (LightGBM) to evaluate graph-based network topologies and highlights sophisticated, coordinated payment abuse rings utilizing shared identities, IPs, and devices.
+**SENTINEL AI** is a premium, cinematic risk-intelligence platform designed for modern payment security. It combines real-time 3D graph intelligence, AI-synthesized investigation briefs, and a strict Human-in-the-Loop decision architecture to detect, analyze, and neutralize payment abuse rings.
 
-## Architecture
+---
 
-1. **Synthetic Data Engine:** Deterministically seeds both regular user traffic and isolated, coordinated "promo abuse" rings into the database.
-2. **PostgreSQL/SQLite Persistence:** Primary data structure uses SQLAlchemy models. Gracefully falls back to SQLite for instant local development if a PostgreSQL instance is unavailable.
-3. **Graph Traversal API:** FastAPI queries heterogeneous graphs (Customers, IPs, Devices) into a structured JSON for topological ML parsing and UI rendering.
-4. **LightGBM Risk Model:** Explains exactly *why* a sub-graph was flagged by utilizing SHAP values directly mapped to visual representations.
-5. **AI Investigator:** Processes verified graph intelligence structures (no direct database LLM mappings to avoid prompt injections).
-6. **Command Center:** React + Vite + Three.js frontend delivering cinematic, performant visual reconstructions of the networks with human-in-the-loop audit logging.
+## ? Core Features
 
-## Tech Stack
-*   **Backend:** Python, FastAPI, SQLAlchemy, Alembic, Passlib, python-jose, LightGBM, SHAP, NetworkX.
-*   **Frontend:** React, Vite, TypeScript, Tailwind CSS (v4 via PostCSS), Zustand, TanStack Query, React Force Graph 3D (Three.js), Recharts.
+- **Real-Time 3D Graph Intelligence:** Interactive 2D and 3D force-directed graphs for visualizing complex entity resolution (IPs, Devices, Customer Accounts).
+- **SENTINEL AI Copilot:** Instant synthesis of raw transaction data into actionable risk briefs.
+- **Human-in-the-Loop Architecture:** AI provides intelligence; the human retains authority. Includes a dedicated Decision Queue and Action Center.
+- **Razorpay Integration Engine:** Live simulation of high-velocity transaction feeds monitoring for velocity attacks and device sharing.
 
-## Local Installation
+<!-- ?? PLACEHOLDER 2: Drag and drop a screenshot of the Network Explorer with the 3D Graph and AI Copilot side-panel here -->
 
-### Backend Setup
+---
+
+## ??? Tech Stack
+
+### Frontend
+- **Framework:** React 18 + Vite + TypeScript
+- **Styling:** Tailwind CSS + Lucide React Icons
+- **Visualizations:** `react-force-graph-3d`, `react-force-graph-2d`, `recharts`
+- **Theme:** Clean, high-contrast minimal aesthetic (Apple/Linear inspired)
+
+### Backend
+- **Framework:** FastAPI (Python)
+- **Database:** SQLite / PostgreSQL via SQLAlchemy
+- **AI Integration:** Sentinel Core Engine (Risk Scoring & Pattern Detection)
+
+---
+
+## ?? Quick Start
+
+### 1. Start the Backend (FastAPI)
 ```bash
 cd backend
-# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Or `venv\Scripts\activate` on Windows
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Run migrations and seed data
-alembic upgrade head
-python -m scripts.generate_data
-
-# Start FastAPI Server
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### Frontend Setup
+### 2. Start the Frontend (Vite/React)
 ```bash
 cd frontend
-# Install dependencies
 npm install
-
-# Start Vite Server
 npm run dev
 ```
 
-Navigate to `http://localhost:5173`. 
-*Note: Ensure the backend is running at `http://localhost:8000` to feed the graphical interface.*
+<!-- ?? PLACEHOLDER 3: Drag and drop a screenshot of the Razorpay Test Environment transaction feed here -->
 
-## Environment Variables
-See `.env.example` in the root and `frontend/.env.example` for deployment overrides. Be sure to configure `VITE_API_BASE_URL` on the Vercel frontend.
+---
 
-## Deployment Architecture
-- **Frontend:** Vercel (Static Vite Build)
-- **Backend:** Designed for Render/Heroku/AWS with a managed PostgreSQL instance. CORS securely bound to the specific frontend origin.
+## ??? Operational Workflow
 
-## Known Limitations
-*   *Synthetic Data:* All names, IPs, devices, and transactions are procedurally generated for the hackathon demonstration.
-*   *Mock LLM:* The AI execution endpoint currently simulates an LLM response based strictly on the deterministic models to guarantee the 3-minute hackathon pitch flow. Hooking up Gemini endpoints requires an API key in the `.env`.
+1. **Detect:** Razorpay webhooks feed live transactions into the Sentinel Engine.
+2. **Investigate:** Analysts explore flagged clusters via the 3D Network Explorer.
+3. **AI Analyze:** The Copilot synthesizes historical data and risk vectors.
+4. **Human Decision:** Analysts execute strict state changes (`PLACE_UNDER_REVIEW`, `MARK_LEGITIMATE`, `RESTRICT`).
+5. **Audit:** Every state change and AI recommendation is cryptographically hashed and logged.
