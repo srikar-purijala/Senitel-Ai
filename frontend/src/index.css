@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Apple-style light design system */
+  --color-background: #ffffff;
+  --color-surface: #f5f5f7;
+  --color-surface-hover: #e8e8ed;
+  --color-border: #d2d2d7;
+  
+  --color-primary: #0071e3;
+  --color-primary-dark: #0077ed;
+  
+  --color-text-main: #1d1d1f;
+  --color-text-muted: #6e6e73;
+  --color-text-secondary: #424245;
+  
+  --color-danger: #ff3b30;
+  --color-warning: #ff9500;
+  --color-success: #34c759;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ffffff;
+    color: #1d1d1f;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Apple-style scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #aeaeb2; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* App shell overrides (dark surfaces for the risk console) */
+.app-surface {
+  background-color: #09090b;
+  color: #f8fafc;
+}
