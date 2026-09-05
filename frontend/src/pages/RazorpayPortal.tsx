@@ -1,6 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CreditCard, ArrowRight, ShieldAlert, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react';
+import { CreditCard, ArrowRight, ShieldAlert, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function RazorpayPortal() {
   const navigate = useNavigate();

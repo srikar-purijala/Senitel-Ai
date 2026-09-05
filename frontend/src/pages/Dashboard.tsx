@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TrendingUp, AlertTriangle, ShieldCheck, Activity, ChevronRight, Zap, ShieldAlert } from 'lucide-react';
+import { TrendingUp, AlertTriangle, ShieldCheck, Activity, Zap, ShieldAlert } from 'lucide-react';
 import { useDemoStore } from '../store';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 

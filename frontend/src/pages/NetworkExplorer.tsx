@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Network, Activity, BrainCircuit, ShieldAlert, Cpu, ChevronRight, CheckCircle, Ban, Trash2, ZoomIn, Box, Info } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Activity, BrainCircuit, ShieldAlert, Cpu, ChevronRight, CheckCircle, Ban, Trash2, ZoomIn, Box, Info } from 'lucide-react';
 import ForceGraph2D from 'react-force-graph-2d';
 import ForceGraph3D from 'react-force-graph-3d';
 import { fetchNetworkGraph, fetchNetworkEvidence, analyzeNetwork, executeNetworkAction } from '../api';
 
 export default function NetworkExplorer() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
   const [evidence, setEvidence] = useState<any>(null);
   const [loading, setLoading] = useState(true);
